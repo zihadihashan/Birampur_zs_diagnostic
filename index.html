@@ -454,11 +454,16 @@ textarea.form-input{height:70px;resize:none}
       <div class="login-sub">আপনার ইউজারনেম ও পাসওয়ার্ড দিন</div>
       <div class="login-card">
         <label class="login-label">ইউজারনেম</label>
-        <input class="login-input" type="text" id="login-user" placeholder="username" autocomplete="off">
+        <input class="login-input" type="text" id="login-user" placeholder="username" autocomplete="off" onkeydown="if(event.key==='Enter')document.getElementById('login-pass').focus()">
         <label class="login-label">পাসওয়ার্ড</label>
-        <input class="login-input" type="password" id="login-pass" placeholder="password">
+        <input class="login-input" type="password" id="login-pass" placeholder="password" onkeydown="if(event.key==='Enter')doLogin()">
         <button class="login-btn" onclick="doLogin()">লগইন করুন</button>
         <div class="login-err" id="login-err">ভুল ইউজারনেম বা পাসওয়ার্ড!</div>
+        <div style="margin-top:12px;background:#E3F2FD;border-radius:10px;padding:10px;font-size:11px;color:#1565C0">
+          <b>উদাহরণ:</b><br>
+          Super Admin: <b>superadmin</b> / <b>super@2024</b><br>
+          ল্যাব ১: <b>admin_lab01</b> / <b>lab01@2024</b>
+        </div>
       </div>
     </div>
   </div>
@@ -916,10 +921,45 @@ function doLogin(){
   var u=document.getElementById('login-user').value.trim();
   var p=document.getElementById('login-pass').value.trim();
   var err=document.getElementById('login-err');err.style.display='none';
-  if(u===SUPER_ADMIN.username&&p===SUPER_ADMIN.password){loggedInAdmin={type:'super'};showSuperAdmin();return;}
-  var la=LAB_ADMINS.find(function(a){return a.username===u&&a.password===p;});
-  if(la){var lab=getLabById(la.labId);loggedInAdmin={type:'lab',labId:la.labId,labName:lab.name};showLabAdminDash();return;}
-  err.style.display='block';
+  var btn=document.querySelector('.login-btn');
+  if(btn){btn.disabled=true;btn.textContent='⏳ যাচাই হচ্ছে...';}
+  
+  function tryLogin(){
+    if(btn){btn.disabled=false;btn.textContent='লগইন করুন';}
+    if(u===SUPER_ADMIN.username&&p===SUPER_ADMIN.password){
+      loggedInAdmin={type:'super'};showSuperAdmin();return;
+    }
+    var la=LAB_ADMINS.find(function(a){return a.username===u&&a.password===p;});
+    if(la){
+      var lab=getLabById(la.labId);
+      loggedInAdmin={type:'lab',labId:la.labId,labName:lab.name};
+      showLabAdminDash();return;
+    }
+    err.style.display='block';
+    err.textContent='ভুল ইউজারনেম বা পাসওয়ার্ড!';
+  }
+  
+  // If Firebase loaded, try immediately; else wait briefly
+  if(db){
+    // Re-fetch latest passwords then try
+    var la2=LAB_ADMINS.find(function(a){return a.username===u;});
+    if(la2){
+      db.collection('config').doc('admin_'+la2.labId).get().then(function(doc){
+        if(doc.exists&&doc.data().password) la2.password=doc.data().password;
+        if(doc.exists&&doc.data().username) la2.username=doc.data().username;
+        tryLogin();
+      }).catch(function(){tryLogin();});
+    } else if(u===SUPER_ADMIN.username){
+      db.collection('config').doc('superadmin').get().then(function(doc){
+        if(doc.exists&&doc.data().password) SUPER_ADMIN.password=doc.data().password;
+        tryLogin();
+      }).catch(function(){tryLogin();});
+    } else {
+      tryLogin();
+    }
+  } else {
+    setTimeout(tryLogin, 500);
+  }
 }
 function doLogout(){loggedInAdmin=null;adminTab='today';document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active','prev');});document.getElementById('screen-admin').classList.add('active');screenStack=['screen-admin'];document.getElementById('login-user').value='';document.getElementById('login-pass').value='';}
 
