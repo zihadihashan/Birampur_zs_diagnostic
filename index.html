@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#005F52">
 <title>বিরামপুর সকল ডায়াগনস্টিক সেন্টার</title>
 <script>
-var _m={name:"বিরামপুর সকল ডায়াগনস্টিক সেন্টার",short_name:"বিরামপুর",start_url:"./",display:"standalone",background_color:"#005F52",theme_color:"#005F52",icons:[{src:"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIj48cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgcng9IjM4IiBmaWxsPSIjMDA1RjUyIi8+PHJlY3QgeD0iODAiIHk9IjQwIiB3aWR0aD0iMzIiIGhlaWdodD0iMTEyIiByeD0iOCIgZmlsbD0id2hpdGUiLz48cmVjdCB4PSI0MCIgeT0iODAiIHdpZHRoPSIxMTIiIGhlaWdodD0iMzIiIHJ4PSI4IiBmaWxsPSJ3aGl0ZSIvPjxjaXJjbGUgY3g9Ijk2IiBjeT0iMTQ4IiByPSIxNiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjgpIi8+PHBhdGggZD0iTTg0IDE0OCBDODQgMTM2IDk2IDEyOCAxMDggMTQ4IEwxMDggMTYwIEM5NiAxNzIgODQgMTYwIDg0IDE0OFoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC45KSIvPjwvc3ZnPg==",sizes:"192x192",type:"image/svg+xml",purpose:"any maskable"}]};
+var _m={name:"বিরামপুর সকল ডায়াগনস্টিক সেন্টার",short_name:"বিরামপুর ডায়াগনস্টিক",start_url:"/birampur-diagnostic/",scope:"/birampur-diagnostic/",display:"standalone",orientation:"portrait",background_color:"#005F52",theme_color:"#005F52",icons:[{src:"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIj48cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgcng9IjM4IiBmaWxsPSIjMDA1RjUyIi8+PHJlY3QgeD0iODAiIHk9IjQwIiB3aWR0aD0iMzIiIGhlaWdodD0iMTEyIiByeD0iOCIgZmlsbD0id2hpdGUiLz48cmVjdCB4PSI0MCIgeT0iODAiIHdpZHRoPSIxMTIiIGhlaWdodD0iMzIiIHJ4PSI4IiBmaWxsPSJ3aGl0ZSIvPjxjaXJjbGUgY3g9Ijk2IiBjeT0iMTQ4IiByPSIxNiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjgpIi8+PHBhdGggZD0iTTg0IDE0OCBDODQgMTM2IDk2IDEyOCAxMDggMTQ4IEwxMDggMTYwIEM5NiAxNzIgODQgMTYwIDg0IDE0OFoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC45KSIvPjwvc3ZnPg==",sizes:"192x192",type:"image/svg+xml",purpose:"any maskable"},{src:"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIj48cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgcng9IjM4IiBmaWxsPSIjMDA1RjUyIi8+PHJlY3QgeD0iODAiIHk9IjQwIiB3aWR0aD0iMzIiIGhlaWdodD0iMTEyIiByeD0iOCIgZmlsbD0id2hpdGUiLz48cmVjdCB4PSI0MCIgeT0iODAiIHdpZHRoPSIxMTIiIGhlaWdodD0iMzIiIHJ4PSI4IiBmaWxsPSJ3aGl0ZSIvPjwvc3ZnPg==",sizes:"512x512",type:"image/svg+xml",purpose:"any maskable"}]};
 var _b=new Blob([JSON.stringify(_m)],{type:'application/manifest+json'});
 var _l=document.createElement('link');_l.rel='manifest';_l.href=URL.createObjectURL(_b);document.currentScript.parentNode.insertBefore(_l,document.currentScript);
 </script>
@@ -920,45 +920,55 @@ function cancelAppt(id){
 function doLogin(){
   var u=document.getElementById('login-user').value.trim();
   var p=document.getElementById('login-pass').value.trim();
-  var err=document.getElementById('login-err');err.style.display='none';
+  var err=document.getElementById('login-err');
   var btn=document.querySelector('.login-btn');
-  if(btn){btn.disabled=true;btn.textContent='⏳ যাচাই হচ্ছে...';}
-  
-  function tryLogin(){
-    if(btn){btn.disabled=false;btn.textContent='লগইন করুন';}
-    if(u===SUPER_ADMIN.username&&p===SUPER_ADMIN.password){
-      loggedInAdmin={type:'super'};showSuperAdmin();return;
-    }
-    var la=LAB_ADMINS.find(function(a){return a.username===u&&a.password===p;});
-    if(la){
-      var lab=getLabById(la.labId);
-      loggedInAdmin={type:'lab',labId:la.labId,labName:lab.name};
-      showLabAdminDash();return;
-    }
-    err.style.display='block';
-    err.textContent='ভুল ইউজারনেম বা পাসওয়ার্ড!';
+  err.style.display='none';
+
+  // Check super admin first (always local)
+  if(u===SUPER_ADMIN.username&&p===SUPER_ADMIN.password){
+    loggedInAdmin={type:'super'};showSuperAdmin();return;
   }
-  
-  // If Firebase loaded, try immediately; else wait briefly
+
+  // Check local LAB_ADMINS array first
+  var la=LAB_ADMINS.find(function(a){return a.username===u&&a.password===p;});
+  if(la){
+    var lab=getLabById(la.labId);
+    loggedInAdmin={type:'lab',labId:la.labId,labName:lab.name};
+    showLabAdminDash();return;
+  }
+
+  // If not found locally, try Firebase (password might have changed)
+  if(btn){btn.disabled=true;btn.textContent='⏳ যাচাই হচ্ছে...';}
+  function resetBtn(){if(btn){btn.disabled=false;btn.textContent='লগইন করুন';}}
+
   if(db){
-    // Re-fetch latest passwords then try
-    var la2=LAB_ADMINS.find(function(a){return a.username===u;});
-    if(la2){
-      db.collection('config').doc('admin_'+la2.labId).get().then(function(doc){
-        if(doc.exists&&doc.data().password) la2.password=doc.data().password;
-        if(doc.exists&&doc.data().username) la2.username=doc.data().username;
-        tryLogin();
-      }).catch(function(){tryLogin();});
-    } else if(u===SUPER_ADMIN.username){
-      db.collection('config').doc('superadmin').get().then(function(doc){
-        if(doc.exists&&doc.data().password) SUPER_ADMIN.password=doc.data().password;
-        tryLogin();
-      }).catch(function(){tryLogin();});
+    // Find lab admin by username
+    var la3=LAB_ADMINS.find(function(a){return a.username===u;});
+    var docId=la3?'admin_'+la3.labId:(u===SUPER_ADMIN.username?'superadmin':null);
+    if(docId){
+      db.collection('config').doc(docId).get().then(function(doc){
+        resetBtn();
+        if(doc.exists){
+          var data=doc.data();
+          if(data.username) {
+            // Update local array
+            if(la3){la3.username=data.username;la3.password=data.password||la3.password;}
+            else if(u===SUPER_ADMIN.username&&data.password) SUPER_ADMIN.password=data.password;
+          }
+          // Try again with updated data
+          if(u===SUPER_ADMIN.username&&p===SUPER_ADMIN.password){
+            loggedInAdmin={type:'super'};showSuperAdmin();return;
+          }
+          var la4=LAB_ADMINS.find(function(a){return a.username===u&&a.password===p;});
+          if(la4){var lab2=getLabById(la4.labId);loggedInAdmin={type:'lab',labId:la4.labId,labName:lab2.name};showLabAdminDash();return;}
+        }
+        err.style.display='block';
+      }).catch(function(){resetBtn();err.style.display='block';});
     } else {
-      tryLogin();
+      resetBtn();err.style.display='block';
     }
   } else {
-    setTimeout(tryLogin, 500);
+    resetBtn();err.style.display='block';
   }
 }
 function doLogout(){loggedInAdmin=null;adminTab='today';document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active','prev');});document.getElementById('screen-admin').classList.add('active');screenStack=['screen-admin'];document.getElementById('login-user').value='';document.getElementById('login-pass').value='';}
