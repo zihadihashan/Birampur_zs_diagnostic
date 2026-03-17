@@ -162,30 +162,22 @@ textarea.form-input{height:70px;resize:none}
 .appt-detail{font-size:10px;color:var(--muted)}
 .cancel-link{display:flex;align-items:center;gap:4px;color:#C62828;font-size:11px;font-weight:600;cursor:pointer;margin-top:7px;padding-top:7px;border-top:1px solid #F0F4F3;background:none;border-left:none;border-right:none;border-bottom:none;font-family:inherit}
 /* PRAYER TIMES - MOSQUE STYLE */
-.prayer-card{background:#fff;border-radius:var(--radius);margin:8px 16px 0;padding:0;box-shadow:var(--shadow);overflow:hidden;border:2px solid #2E7D32}
-.prayer-mosque-top{background:#fff;padding:12px 16px 8px;text-align:center;position:relative}
-.prayer-arch{width:100%;height:60px;position:relative;margin-bottom:4px}
-.prayer-clock{font-size:28px;font-weight:900;color:#C62828;font-family:monospace;letter-spacing:2px}
-.prayer-clock-sec{font-size:16px;color:#C62828;font-family:monospace}
-.prayer-schedule-title{color:#2E7D32;font-size:13px;font-weight:700;margin:2px 0}
-.prayer-date{color:#C62828;font-size:12px;font-weight:700;font-family:monospace;margin-bottom:8px}
-.prayer-rows{padding:4px 12px 10px}
-.prayer-row{display:flex;align-items:center;padding:7px 8px;border-bottom:1px solid #f0f0f0}
-.prayer-row:last-child{border-bottom:none}
-.prayer-row.next-prayer{background:#E8F5E9;border-radius:8px;border-bottom:none;margin-bottom:2px}
-.prayer-row-name{color:#1565C0;font-size:14px;font-weight:700;flex:1}
-.prayer-row-arrow{color:#2E7D32;font-size:16px;margin:0 8px}
-.prayer-row-time{color:#C62828;font-size:16px;font-weight:900;font-family:monospace;letter-spacing:1px}
-.prayer-row-badge{background:#2E7D32;color:#fff;font-size:9px;font-weight:700;padding:2px 6px;border-radius:10px;margin-left:6px}
-.mosque-footer{background:#2E7D32;padding:6px;text-align:center;color:rgba(255,255,255,.8);font-size:10px}
-.prayer-card{background:linear-gradient(135deg,var(--teal-dark),var(--teal));border-radius:var(--radius);margin:10px 16px 0;padding:14px;box-shadow:var(--shadow);overflow:hidden;position:relative}
-.prayer-card::before{content:'🕌';position:absolute;right:12px;top:8px;font-size:40px;opacity:.15}
-.prayer-title{color:#fff;font-size:13px;font-weight:700;margin-bottom:10px}
-.prayer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.prayer-item{background:rgba(255,255,255,.12);border-radius:10px;padding:8px 6px;text-align:center}
-.prayer-name{color:rgba(255,255,255,.8);font-size:10px}
-.prayer-time{color:#fff;font-size:13px;font-weight:700;margin-top:2px}
-.prayer-next{background:rgba(255,215,0,.2);border-radius:6px;padding:2px 6px;font-size:9px;color:#FFD700;margin-top:3px;display:inline-block}
+.prayer-card{background:#fff;border-radius:16px;margin:8px 16px 0;overflow:hidden;box-shadow:0 2px 12px rgba(0,80,70,.10);border:2px solid #2E7D32}
+.prayer-mosque-header{background:linear-gradient(135deg,#1B5E20,#2E7D32);padding:12px 16px 10px;text-align:center}
+.prayer-clock-display{font-size:32px;font-weight:900;color:#FFD700;font-family:monospace;letter-spacing:3px;text-shadow:0 2px 4px rgba(0,0,0,.3)}
+.prayer-clock-secs{font-size:18px;color:#FFD700;font-family:monospace}
+.prayer-title-text{color:#fff;font-size:12px;font-weight:700;margin-top:4px;opacity:.9}
+.prayer-date-text{color:#FFD700;font-size:11px;font-family:monospace;margin-top:2px}
+.prayer-list{padding:6px 12px 8px;background:#fff}
+.prayer-row-item{display:flex;align-items:center;padding:8px 6px;border-bottom:1px solid #f5f5f5}
+.prayer-row-item:last-child{border-bottom:none}
+.prayer-row-item.active-prayer{background:#E8F5E9;border-radius:10px;border-bottom:none;margin:2px 0}
+.prayer-row-name-bn{color:#1565C0;font-size:13px;font-weight:700;width:70px}
+.prayer-row-name-en{color:#607D74;font-size:10px;width:55px}
+.prayer-row-arr{color:#2E7D32;font-size:18px;margin:0 8px}
+.prayer-row-time-val{color:#C62828;font-size:15px;font-weight:900;font-family:monospace;flex:1}
+.prayer-next-tag{background:#2E7D32;color:#fff;font-size:9px;font-weight:700;padding:2px 8px;border-radius:10px}
+.prayer-mosque-footer{background:#2E7D32;padding:5px;text-align:center;color:rgba(255,255,255,.8);font-size:10px}
 /* LAB CARDS */
 .lab-card{background:var(--white);border-radius:14px;margin:8px 16px 0;padding:13px;box-shadow:var(--shadow);cursor:pointer;border:none;width:calc(100% - 32px);display:flex;align-items:center;gap:12px;text-align:left}
 .lab-logo{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;overflow:hidden;background:#E0F7F4;flex-shrink:0}
@@ -269,6 +261,35 @@ textarea.form-input{height:70px;resize:none}
 .accept-btn{background:#2E7D32;color:#fff;border:none;border-radius:8px;padding:6px 12px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit}
 .reject-btn{background:#C62828;color:#fff;border:none;border-radius:8px;padding:6px 12px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit}
 .edit-appt-btn{background:#1565C0;color:#fff;border:none;border-radius:8px;padding:6px 12px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit}
+
+/* PRINT STYLES */
+@media print {
+  body * { visibility: hidden !important; }
+  #print-ticket, #print-ticket * { visibility: visible !important; }
+  #print-ticket { position: fixed !important; top: 0; left: 0; width: 100%; padding: 10px; }
+  .no-print { display: none !important; }
+}
+.receipt-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:600;display:flex;align-items:center;justify-content:center;padding:16px}
+.receipt-modal{background:#fff;border-radius:16px;width:100%;max-width:400px;max-height:90vh;overflow-y:auto;padding:0}
+.receipt-header{background:linear-gradient(135deg,var(--teal-dark),var(--teal));padding:16px;text-align:center;border-radius:16px 16px 0 0}
+.receipt-header h3{color:#fff;font-size:16px;font-weight:700;margin:0}
+.receipt-header p{color:rgba(255,255,255,.8);font-size:11px;margin:4px 0 0}
+.receipt-body{padding:16px}
+.receipt-serial-big{text-align:center;background:var(--teal);color:#fff;border-radius:12px;padding:16px;margin-bottom:12px}
+.receipt-serial-big .num{font-size:56px;font-weight:900;line-height:1}
+.receipt-serial-big .lbl{font-size:11px;opacity:.8;margin-top:4px}
+.receipt-row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #f0f0f0;font-size:13px}
+.receipt-row:last-child{border-bottom:none}
+.receipt-row .lbl{color:var(--muted)}
+.receipt-row .val{font-weight:600;color:var(--text);text-align:right;max-width:60%}
+.receipt-fee-box{background:#E8F5E9;border-radius:10px;padding:12px;text-align:center;margin-top:10px}
+.receipt-fee-box .fee-lbl{font-size:11px;color:#2E7D32;font-weight:600}
+.receipt-fee-box .fee-val{font-size:28px;font-weight:900;color:#2E7D32}
+.receipt-fee-box .pay-status{display:inline-block;padding:3px 12px;border-radius:20px;font-size:11px;font-weight:700;margin-top:4px}
+.receipt-actions{display:flex;gap:8px;padding:12px 16px 16px}
+.btn-receive{flex:1;background:#2E7D32;color:#fff;border:none;border-radius:10px;padding:12px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+.btn-print{flex:1;background:#1565C0;color:#fff;border:none;border-radius:10px;padding:12px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+.btn-close-receipt{width:100%;background:#f5f5f5;color:var(--text);border:none;border-radius:10px;padding:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;margin-top:4px}
 .note-box{background:#FFF8E1;border-radius:10px;margin:10px 16px 0;padding:11px 13px;display:flex;gap:8px;align-items:flex-start}
 .note-text{font-size:11px;color:#E65100;flex:1}
 .empty-state{padding:50px 20px;text-align:center}
@@ -320,7 +341,7 @@ textarea.form-input{height:70px;resize:none}
   </div>
   <div class="bottom-nav">
     <button class="nav-item active" onclick="navTo('home')"><span class="nav-icon">🏠</span>হোম</button>
-    <button class="nav-item" onclick="navTo('doctors')"><span class="nav-icon">👨‍⚕️</span>ডাক্তার</button>
+    <button class="nav-item" onclick="navTo('doctors')"><span class="nav-icon"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAA8ADwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDZWpY/vYpqxOTwpqdLdyegH41IiSOPParCxgUsabVGetSYoAYFpwUU4Cl4AoAZtoxT8ZGRSYoArqtSAAUKK5PxhqVyt1Fp9u0iDZvk2/8ALQHjGfTg0Ald2J9f8Ux26Pb2UoLDh5Qfu+w9/euFufFOsSbkTUbnb/10PNdJYeE7nUId94xhi7Jnmr0nhqys0VYrdCAOSRkmsnVSOuOHbRkaL48vYJ0GoObm2ACMQBuX3969Esb221G1W5tJlmifoyn9D6H2rzHWdMigWSRI1QEcjFO+H+qvZ62Lbf8AuboFGUn+Lqp+vb8a0jJSRhUpuDsz1TbSUm9z6UnzetMzKuWI+8a5OaJr3xXJJIzeXA2Pm6KFx/8AX/OutA4rKOnLd6jqAZiQVThePcj/AMdFTN2RrRV5kkniLSI28trn5vQKaR9WsRbGYuGxzWRqFtql3dxQW9hBBFjHA3EH3rS1qwEHhxYNiB0A3FVxn1rmdj0Yps5PUdTu9TL/AGSxLxr1Zu9Y1oVt72G5EHlSQyqXXseetbn2C6nsgltdSR884OAR6VB/ZstvE4mYO2ODnOK1jJIwqQbPVgmQD60uyo9NmluNLtZ50CSyRK7qOxIq1gVscBkg1BbKsGuSsOtxCpI91JH8sVIvGPrVW9cxX1jKnDGQofoR/wDWqZr3TSi7TRsXBEab1GWPQCuf1yS+awmjIhQEDBLEsx78entWzPIyxs46qOK5HXdYu4kCpsHy5ztycmuax6SbeiKmgsSsgkdct/COmabfERu+egFY2n3Mklw5JAIGcjirOoSuysC3XiqS94iT91nqmlN52kWch/jgQ/8Ajoq1imWkaw2cMaDCpGqgewAqTua6TzT/2Q==" style="width:26px;height:26px;border-radius:50%;object-fit:cover;border:2px solid var(--teal)"></span>ডাক্তার</button>
     <button class="nav-item" onclick="navTo('appointments')"><span class="nav-icon">📅</span>সিরিয়াল</button>
     <button class="nav-item" onclick="navTo('admin')"><span class="nav-icon">⚙️</span>অ্যাডমিন</button>
   </div>
@@ -362,7 +383,7 @@ textarea.form-input{height:70px;resize:none}
   <div class="content" id="doctor-list-content"></div>
   <div class="bottom-nav">
     <button class="nav-item" onclick="navTo('home')"><span class="nav-icon">🏠</span>হোম</button>
-    <button class="nav-item active" onclick="navTo('doctors')"><span class="nav-icon">👨‍⚕️</span>ডাক্তার</button>
+    <button class="nav-item active" onclick="navTo('doctors')"><span class="nav-icon"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAA8ADwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDZWpY/vYpqxOTwpqdLdyegH41IiSOPParCxgUsabVGetSYoAYFpwUU4Cl4AoAZtoxT8ZGRSYoArqtSAAUKK5PxhqVyt1Fp9u0iDZvk2/8ALQHjGfTg0Ald2J9f8Ux26Pb2UoLDh5Qfu+w9/euFufFOsSbkTUbnb/10PNdJYeE7nUId94xhi7Jnmr0nhqys0VYrdCAOSRkmsnVSOuOHbRkaL48vYJ0GoObm2ACMQBuX3969Esb221G1W5tJlmifoyn9D6H2rzHWdMigWSRI1QEcjFO+H+qvZ62Lbf8AuboFGUn+Lqp+vb8a0jJSRhUpuDsz1TbSUm9z6UnzetMzKuWI+8a5OaJr3xXJJIzeXA2Pm6KFx/8AX/OutA4rKOnLd6jqAZiQVThePcj/AMdFTN2RrRV5kkniLSI28trn5vQKaR9WsRbGYuGxzWRqFtql3dxQW9hBBFjHA3EH3rS1qwEHhxYNiB0A3FVxn1rmdj0Yps5PUdTu9TL/AGSxLxr1Zu9Y1oVt72G5EHlSQyqXXseetbn2C6nsgltdSR884OAR6VB/ZstvE4mYO2ODnOK1jJIwqQbPVgmQD60uyo9NmluNLtZ50CSyRK7qOxIq1gVscBkg1BbKsGuSsOtxCpI91JH8sVIvGPrVW9cxX1jKnDGQofoR/wDWqZr3TSi7TRsXBEab1GWPQCuf1yS+awmjIhQEDBLEsx78entWzPIyxs46qOK5HXdYu4kCpsHy5ztycmuax6SbeiKmgsSsgkdct/COmabfERu+egFY2n3Mklw5JAIGcjirOoSuysC3XiqS94iT91nqmlN52kWch/jgQ/8Ajoq1imWkaw2cMaDCpGqgewAqTua6TzT/2Q==" style="width:26px;height:26px;border-radius:50%;object-fit:cover;border:2px solid var(--teal)"></span>ডাক্তার</button>
     <button class="nav-item" onclick="navTo('appointments')"><span class="nav-icon">📅</span>সিরিয়াল</button>
     <button class="nav-item" onclick="navTo('admin')"><span class="nav-icon">⚙️</span>অ্যাডমিন</button>
   </div>
@@ -417,7 +438,7 @@ textarea.form-input{height:70px;resize:none}
   <div class="content" id="appointments-content"></div>
   <div class="bottom-nav">
     <button class="nav-item" onclick="navTo('home')"><span class="nav-icon">🏠</span>হোম</button>
-    <button class="nav-item" onclick="navTo('doctors')"><span class="nav-icon">👨‍⚕️</span>ডাক্তার</button>
+    <button class="nav-item" onclick="navTo('doctors')"><span class="nav-icon"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAA8ADwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDZWpY/vYpqxOTwpqdLdyegH41IiSOPParCxgUsabVGetSYoAYFpwUU4Cl4AoAZtoxT8ZGRSYoArqtSAAUKK5PxhqVyt1Fp9u0iDZvk2/8ALQHjGfTg0Ald2J9f8Ux26Pb2UoLDh5Qfu+w9/euFufFOsSbkTUbnb/10PNdJYeE7nUId94xhi7Jnmr0nhqys0VYrdCAOSRkmsnVSOuOHbRkaL48vYJ0GoObm2ACMQBuX3969Esb221G1W5tJlmifoyn9D6H2rzHWdMigWSRI1QEcjFO+H+qvZ62Lbf8AuboFGUn+Lqp+vb8a0jJSRhUpuDsz1TbSUm9z6UnzetMzKuWI+8a5OaJr3xXJJIzeXA2Pm6KFx/8AX/OutA4rKOnLd6jqAZiQVThePcj/AMdFTN2RrRV5kkniLSI28trn5vQKaR9WsRbGYuGxzWRqFtql3dxQW9hBBFjHA3EH3rS1qwEHhxYNiB0A3FVxn1rmdj0Yps5PUdTu9TL/AGSxLxr1Zu9Y1oVt72G5EHlSQyqXXseetbn2C6nsgltdSR884OAR6VB/ZstvE4mYO2ODnOK1jJIwqQbPVgmQD60uyo9NmluNLtZ50CSyRK7qOxIq1gVscBkg1BbKsGuSsOtxCpI91JH8sVIvGPrVW9cxX1jKnDGQofoR/wDWqZr3TSi7TRsXBEab1GWPQCuf1yS+awmjIhQEDBLEsx78entWzPIyxs46qOK5HXdYu4kCpsHy5ztycmuax6SbeiKmgsSsgkdct/COmabfERu+egFY2n3Mklw5JAIGcjirOoSuysC3XiqS94iT91nqmlN52kWch/jgQ/8Ajoq1imWkaw2cMaDCpGqgewAqTua6TzT/2Q==" style="width:26px;height:26px;border-radius:50%;object-fit:cover;border:2px solid var(--teal)"></span>ডাক্তার</button>
     <button class="nav-item active" onclick="navTo('appointments')"><span class="nav-icon">📅</span>সিরিয়াল</button>
     <button class="nav-item" onclick="navTo('admin')"><span class="nav-icon">⚙️</span>অ্যাডমিন</button>
   </div>
@@ -443,7 +464,7 @@ textarea.form-input{height:70px;resize:none}
   </div>
   <div class="bottom-nav">
     <button class="nav-item" onclick="navTo('home')"><span class="nav-icon">🏠</span>হোম</button>
-    <button class="nav-item" onclick="navTo('doctors')"><span class="nav-icon">👨‍⚕️</span>ডাক্তার</button>
+    <button class="nav-item" onclick="navTo('doctors')"><span class="nav-icon"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAA8ADwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDZWpY/vYpqxOTwpqdLdyegH41IiSOPParCxgUsabVGetSYoAYFpwUU4Cl4AoAZtoxT8ZGRSYoArqtSAAUKK5PxhqVyt1Fp9u0iDZvk2/8ALQHjGfTg0Ald2J9f8Ux26Pb2UoLDh5Qfu+w9/euFufFOsSbkTUbnb/10PNdJYeE7nUId94xhi7Jnmr0nhqys0VYrdCAOSRkmsnVSOuOHbRkaL48vYJ0GoObm2ACMQBuX3969Esb221G1W5tJlmifoyn9D6H2rzHWdMigWSRI1QEcjFO+H+qvZ62Lbf8AuboFGUn+Lqp+vb8a0jJSRhUpuDsz1TbSUm9z6UnzetMzKuWI+8a5OaJr3xXJJIzeXA2Pm6KFx/8AX/OutA4rKOnLd6jqAZiQVThePcj/AMdFTN2RrRV5kkniLSI28trn5vQKaR9WsRbGYuGxzWRqFtql3dxQW9hBBFjHA3EH3rS1qwEHhxYNiB0A3FVxn1rmdj0Yps5PUdTu9TL/AGSxLxr1Zu9Y1oVt72G5EHlSQyqXXseetbn2C6nsgltdSR884OAR6VB/ZstvE4mYO2ODnOK1jJIwqQbPVgmQD60uyo9NmluNLtZ50CSyRK7qOxIq1gVscBkg1BbKsGuSsOtxCpI91JH8sVIvGPrVW9cxX1jKnDGQofoR/wDWqZr3TSi7TRsXBEab1GWPQCuf1yS+awmjIhQEDBLEsx78entWzPIyxs46qOK5HXdYu4kCpsHy5ztycmuax6SbeiKmgsSsgkdct/COmabfERu+egFY2n3Mklw5JAIGcjirOoSuysC3XiqS94iT91nqmlN52kWch/jgQ/8Ajoq1imWkaw2cMaDCpGqgewAqTua6TzT/2Q==" style="width:26px;height:26px;border-radius:50%;object-fit:cover;border:2px solid var(--teal)"></span>ডাক্তার</button>
     <button class="nav-item" onclick="navTo('appointments')"><span class="nav-icon">📅</span>সিরিয়াল</button>
     <button class="nav-item active" onclick="navTo('admin')"><span class="nav-icon">⚙️</span>অ্যাডমিন</button>
   </div>
@@ -573,57 +594,47 @@ function renderPrayerCard(){
   var now=new Date();
   var nowMin=now.getHours()*60+now.getMinutes();
   var prayers=[
-    {name:'ফজর',key:'fajr',bn:'ফজর'},
-    {name:'যোহর',key:'dhuhr',bn:'যোহর'},
-    {name:'আসর',key:'asr',bn:'আসর'},
-    {name:'মাগরিব',key:'maghrib',bn:'মাগরিব'},
-    {name:'ইশা',key:'isha',bn:'ইশা'}
+    {key:'fajr',   bn:'ফজর',    en:'Fajr'},
+    {key:'dhuhr',  bn:'যোহর',   en:'Dhuhr'},
+    {key:'asr',    bn:'আসর',    en:'Asr'},
+    {key:'maghrib',bn:'মাগরিব', en:'Maghrib'},
+    {key:'isha',   bn:'ইশা',    en:'Isha'}
   ];
   function toMin(t){var p=t.split(':');return parseInt(p[0])*60+parseInt(p[1]);}
-  var nextPrayer='';
+  var nextKey='';
   for(var i=0;i<prayers.length;i++){
-    if(toMin(pt[prayers[i].key])>nowMin){nextPrayer=prayers[i].key;break;}
+    if(toMin(pt[prayers[i].key])>nowMin){nextKey=prayers[i].key;break;}
   }
-  var html='<div class="prayer-card">'
-    +'<div class="prayer-title">🕌 নামাজের সময়সূচি — বিরামপুর</div>'
-    +'<div class="prayer-grid">';
+  var h=String(now.getHours()).padStart(2,'0');
+  var m=String(now.getMinutes()).padStart(2,'0');
+  var s=String(now.getSeconds()).padStart(2,'0');
+  var dd=String(now.getDate()).padStart(2,'0');
+  var mm=String(now.getMonth()+1).padStart(2,'0');
+  var yyyy=now.getFullYear();
+  var rowsHtml='';
   for(var i=0;i<prayers.length;i++){
     var p=prayers[i];
-    var isNext=p.key===nextPrayer;
-    html+='<div class="prayer-item'+(isNext?' ':'')+(isNext?'" style="background:rgba(255,215,0,.25)':'"')+'>'
-      +'<div class="prayer-name">'+p.bn+'</div>'
-      +'<div class="prayer-time">'+pt[p.key]+'</div>'
-      +(isNext?'<div class="prayer-next">পরবর্তী</div>':'')
+    var isNext=p.key===nextKey;
+    rowsHtml+='<div class="prayer-row-item'+(isNext?' active-prayer':'')+'">'
+      +'<div class="prayer-row-name-bn">'+p.bn+'</div>'
+      +'<div class="prayer-row-name-en">'+p.en+'</div>'
+      +'<div class="prayer-row-arr">⇒</div>'
+      +'<div class="prayer-row-time-val">'+pt[p.key]+'</div>'
+      +(isNext?'<span class="prayer-next-tag">পরবর্তী</span>':'')
       +'</div>';
   }
-  html+='</div></div>';
+  var html='<div class="prayer-card">'
+    +'<div class="prayer-mosque-header">'
+    +'<div class="prayer-clock-display">'+h+':'+m+'<span class="prayer-clock-secs"> '+s+'</span></div>'
+    +'<div class="prayer-title-text">🕌 নামাজের সময়সূচি — বিরামপুর</div>'
+    +'<div class="prayer-date-text">'+dd+'-'+mm+'-'+yyyy+'</div>'
+    +'</div>'
+    +'<div class="prayer-list">'+rowsHtml+'</div>'
+    +'<div class="prayer-mosque-footer">বিরামপুর সকল ডায়াগনস্টিক সেন্টার</div>'
+    +'</div>';
   var el=document.getElementById('prayer-card-home');
-  if(el){el.innerHTML=html;return;}
-  // fallback to prayer-grid
-  var el2=document.getElementById('prayer-grid');
-  if(el2){
-    var pt2=getPrayerTimes();
-    var prayers2=[
-      {bn:'ফজর',key:'fajr',icon:'🌙'},
-      {bn:'যোহর',key:'dhuhr',icon:'☀️'},
-      {bn:'আসর',key:'asr',icon:'🌤️'},
-      {bn:'মাগরিব',key:'maghrib',icon:'🌅'},
-      {bn:'ইশা',key:'isha',icon:'🌃'}
-    ];
-    function toMin2(t){var p=t.split(':');return parseInt(p[0])*60+parseInt(p[1]);}
-    var nowMin2=new Date().getHours()*60+new Date().getMinutes();
-    var nextKey='';
-    for(var j=0;j<prayers2.length;j++){if(toMin2(pt2[prayers2[j].key])>nowMin2){nextKey=prayers2[j].key;break;}}
-    el2.innerHTML=prayers2.map(function(p){
-      var isNext=p.key===nextKey;
-      return '<div style="text-align:center;padding:8px 4px;border-radius:10px;background:'+(isNext?'var(--teal)':'#f5f5f5')+';color:'+(isNext?'#fff':'var(--text)')+';">'
-        +'<div style="font-size:18px">'+p.icon+'</div>'
-        +'<div style="font-size:9px;margin-top:2px;opacity:.8">'+p.bn+'</div>'
-        +'<div style="font-size:12px;font-weight:700;margin-top:2px">'+pt2[p.key]+'</div>'
-        +(isNext?'<div style="font-size:8px;margin-top:2px">পরবর্তী</div>':'')
-        +'</div>';
-    }).join('');
-  }
+  if(el) el.innerHTML=html;
+  setTimeout(renderPrayerCard,1000);
 }
 
 // ===== NAV =====
@@ -652,7 +663,7 @@ function initHome(){
   if(!todayDocs.length){cont.innerHTML='<div class="empty-state"><div class="empty-icon">😴</div><div class="empty-text">আজ কোনো ডাক্তার নেই</div></div>';}
   else{cont.innerHTML=todayDocs.slice(0,10).map(function(d){
     var lab=getLabById(d.labId);
-    var avatarHtml=d.photo?'<img src="'+d.photo+'" alt="">':d.avatar;
+    var avatarHtml=d.photo?'<img src="'+d.photo+'" style="width:100%;height:100%;object-fit:cover;border-radius:11px" alt="">':d.avatar;
     return '<button class="doc-card" onclick="openProfile(\''+d.id+'\')">'
       +'<div class="doc-avatar" style="background:'+d.bg+'">'+avatarHtml+'</div>'
       +'<div class="doc-info"><div class="doc-name">'+esc(d.name)+'</div>'
@@ -687,7 +698,7 @@ function openLabDetail(labId){
   var cont=document.getElementById('lab-detail-content');
   if(!docs.length){cont.innerHTML='<div class="empty-state"><div class="empty-icon">👨‍⚕️</div><div class="empty-text">এই সেন্টারে এখনো ডাক্তার যোগ করা হয়নি</div></div>';}
   else{cont.innerHTML=docs.map(function(d){
-    var avatarHtml=d.photo?'<img src="'+d.photo+'" alt="">':d.avatar;
+    var avatarHtml=d.photo?'<img src="'+d.photo+'" style="width:100%;height:100%;object-fit:cover;border-radius:11px" alt="">':d.avatar;
     return '<button class="doc-card" onclick="openProfile(\''+d.id+'\')">'
       +'<div class="doc-avatar" style="background:'+d.bg+'">'+avatarHtml+'</div>'
       +'<div class="doc-info"><div class="doc-name">'+esc(d.name)+'</div>'
@@ -709,7 +720,7 @@ function renderDoctors(){
   if(!filtered.length){cont.innerHTML='<div class="empty-state"><div class="empty-icon">🔍</div><div class="empty-text">কোনো ডাক্তার পাওয়া যায়নি</div></div>';return;}
   cont.innerHTML=filtered.map(function(d){
     var lab=getLabById(d.labId);
-    var avatarHtml=d.photo?'<img src="'+d.photo+'" alt="">':d.avatar;
+    var avatarHtml=d.photo?'<img src="'+d.photo+'" style="width:100%;height:100%;object-fit:cover;border-radius:11px" alt="">':d.avatar;
     return '<button class="doc-card" onclick="openProfile(\''+d.id+'\')">'
       +'<div class="doc-avatar" style="background:'+d.bg+'">'+avatarHtml+'</div>'
       +'<div class="doc-info"><div class="doc-name">'+esc(d.name)+'</div>'
@@ -727,7 +738,7 @@ function openProfile(id){
   var d=DOCTORS.find(function(x){return x.id===id;});if(!d)return;
   var lab=getLabById(d.labId);
   document.getElementById('profile-header').style.background='linear-gradient(135deg,'+d.color+'dd,'+d.color+')';
-  var avatarHtml=d.photo?'<img src="'+d.photo+'" alt="">':d.avatar;
+  var avatarHtml=d.photo?'<img src="'+d.photo+'" style="width:100%;height:100%;object-fit:cover;border-radius:11px" alt="">':d.avatar;
   document.getElementById('profile-header-content').innerHTML=
     '<div class="profile-avatar-lg">'+avatarHtml+'</div>'
     +'<div class="profile-name">'+esc(d.name)+'</div>'
@@ -756,7 +767,7 @@ function openBooking(id){
   visitType='new';paymentStatus='paid';
   var d=curDoc,lab=getLabById(d.labId);
   document.getElementById('booking-header').style.background='linear-gradient(135deg,'+d.color+'dd,'+d.color+')';
-  var avatarHtml=d.photo?'<img src="'+d.photo+'" alt="">':d.avatar;
+  var avatarHtml=d.photo?'<img src="'+d.photo+'" style="width:100%;height:100%;object-fit:cover;border-radius:11px" alt="">':d.avatar;
   document.getElementById('booking-banner').innerHTML=
     '<div class="banner-avatar">'+avatarHtml+'</div>'
     +'<div><div class="banner-name">'+esc(d.name)+'</div>'
@@ -964,10 +975,10 @@ function renderAdminToday(cont){
         +'</div></div>'
         +'<div style="display:flex;align-items:center;gap:6px;margin-top:6px">'+stLabel+' '+payLabel+'</div>'
         +'<div class="action-row">'
-        +(st!=='accepted'?'<button class="accept-btn" onclick="updateApptStatus(\'' + a.id + '\',\'accepted\')">✅ গ্রহণ করুন</button>':'')
+        +(st!=='accepted'?'<button class="accept-btn" onclick="updateApptStatus(\'' + a.id + '\',\'accepted\')">✅ গ্রহণ</button>':'')
         +(st!=='rejected'?'<button class="reject-btn" onclick="updateApptStatus(\'' + a.id + '\',\'rejected\')">❌ বাতিল</button>':'')
         +'<button class="edit-appt-btn" onclick="openEditAppt(\'' + a.id + '\')">✏️ এডিট</button>'
-        +(a.payStatus!=='paid'?'<button class="accept-btn" style="background:#1565C0" onclick="updatePayStatus(\'' + a.id + '\',\'paid\')">💰 পেইড করুন</button>':'')
+        +'<button class="edit-appt-btn" style="background:#E65100" onclick="openReceiptModal(\'' + a.id + '\')">🧾 রিসিট</button>'
         +'</div></div>';
     }).join('')
     :'<div class="empty-state"><div class="empty-icon">📋</div><div class="empty-text">এই দিনে কোনো সিরিয়াল নেই</div></div>');
@@ -1184,13 +1195,111 @@ function renderSuperLabs(cont){
   cont.innerHTML=LABS.map(function(lab){
     var docs=DOCTORS.filter(function(d){return d.labId===lab.id;});
     var admin=LAB_ADMINS.find(function(a){return a.labId===lab.id;})||{};
-    var logoHtml=lab.logo?'<img src="'+lab.logo+'" style="width:36px;height:36px;border-radius:8px;object-fit:cover">':lab.icon;
-    return '<div class="section-box" style="margin-top:10px">'
-      +'<div class="section-box-title"><span style="font-size:24px">'+logoHtml+'</span> '+esc(lab.name)+'</div>'
-      +'<div class="section-box-text">👨‍⚕️ ডাক্তার: '+docs.length+' জন</div>'
-      +'<div class="section-box-text">👤 Username: <b>'+esc(admin.username||'')+'</b></div>'
-      +'<div class="section-box-text">🔑 Password: <b>'+esc(admin.password||'')+'</b></div>'
-      +'</div>';}).join('');
+    var logoHtml=lab.logo
+      ?'<img src="'+lab.logo+'" style="width:60px;height:60px;border-radius:12px;object-fit:cover;border:2px solid #ddd">'
+      :'<div style="width:60px;height:60px;border-radius:12px;background:#E0F7F4;display:flex;align-items:center;justify-content:center;font-size:28px;border:2px dashed #ddd">'+lab.icon+'</div>';
+    return '<div class="section-box" style="margin-top:10px" data-labid="'+lab.id+'">'
+      +'<div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">'
+      +logoHtml
+      +'<div style="flex:1">'
+      +'<div style="font-size:13px;font-weight:700">'+esc(lab.name)+'</div>'
+      +'<div style="font-size:10px;color:var(--muted)">'+esc(lab.short)+'</div>'
+      +'<div style="font-size:11px;color:var(--muted);margin-top:2px">👨‍⚕️ '+docs.length+' জন ডাক্তার</div>'
+      +'<div style="font-size:11px;color:var(--muted)">👤 '+esc(admin.username||'-')+'</div>'
+      +'</div>'
+      +'<button class="edit-btn-sm" onclick="editLabName(\''+lab.id+'\')" style="flex-shrink:0;align-self:flex-start">✏️</button>'
+      +'</div>'
+      +'<div style="display:flex;gap:8px">'
+      +'<button class="super-logo-btn" data-lid="'+lab.id+'" style="flex:1;background:var(--teal);color:#fff;border:none;border-radius:8px;padding:8px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit">📷 লোগো আপলোড</button>'
+      +(lab.logo?'<button class="super-logo-del" data-lid="'+lab.id+'" style="background:#FFEBEE;color:#C62828;border:none;border-radius:8px;padding:8px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit">🗑️</button>':'')
+      +'</div>'
+      +'</div>';
+  }).join('');
+  // Add hidden file input
+  var inp=document.createElement('input');
+  inp.type='file'; inp.accept='image/*'; inp.id='super-logo-file'; inp.style.display='none';
+  cont.appendChild(inp);
+  // Bind upload buttons
+  cont.querySelectorAll('.super-logo-btn').forEach(function(btn){
+    btn.onclick=function(){inp.dataset.lid=this.dataset.lid; inp.click();};
+  });
+  inp.onchange=function(){
+    var file=inp.files[0]; if(!file) return;
+    var labId=inp.dataset.lid;
+    var reader=new FileReader();
+    reader.onload=function(e){
+      var lab=LABS.find(function(l){return l.id===labId;});
+      if(lab) lab.logo=e.target.result;
+      if(db) db.collection('config').doc('lab_logo_'+labId).set({logo:e.target.result}).catch(function(){});
+      renderSuperLabs(cont); initHome(); renderLabList();
+      alert('✅ লোগো সেভ হয়েছে!');
+    };
+    reader.readAsDataURL(file);
+  };
+  // Bind delete buttons
+  cont.querySelectorAll('.super-logo-del').forEach(function(btn){
+    btn.onclick=function(){
+      var labId=this.dataset.lid;
+      if(!confirm('লোগো মুছে দেবেন?')) return;
+      var lab=LABS.find(function(l){return l.id===labId;});
+      if(lab) lab.logo='';
+      if(db) db.collection('config').doc('lab_logo_'+labId).delete().catch(function(){});
+      renderSuperLabs(cont); initHome(); renderLabList();
+    };
+  });
+}
+
+function editLabName(labId){
+  var lab=LABS.find(function(l){return l.id===labId;});
+  if(!lab) return;
+  var ov=document.createElement('div');
+  ov.className='modal-overlay';ov.id='edit-lab-modal';
+  ov.innerHTML='<div class="modal-sheet">'
+    +'<div class="modal-handle"></div>'
+    +'<div class="modal-title">✏️ ল্যাবের নাম পরিবর্তন</div>'
+    +'<button class="modal-close" onclick="closeEditLabModal()">✕</button>'
+    +'<div class="modal-body">'
+    +'<label class="form-label">পূর্ণ নাম</label>'
+    +'<input class="form-input" id="el-name" value="'+esc(lab.name)+'">'
+    +'<label class="form-label" style="margin-top:10px">সংক্ষিপ্ত নাম</label>'
+    +'<input class="form-input" id="el-short" value="'+esc(lab.short)+'">'
+    +'<button class="save-doc-btn" onclick="saveLabName(\''+labId+'\')">💾 সেভ করুন</button>'
+    +'</div></div>';
+  document.querySelector('.app').appendChild(ov);
+}
+function closeEditLabModal(){var m=document.getElementById('edit-lab-modal');if(m)m.remove();}
+function saveLabName(labId){
+  var name=document.getElementById('el-name').value.trim();
+  var short=document.getElementById('el-short').value.trim();
+  if(!name){alert('নাম দিন');return;}
+  var lab=LABS.find(function(l){return l.id===labId;});
+  if(lab){lab.name=name;lab.short=short||name;}
+  if(db)db.collection('config').doc('lab_name_'+labId).set({name:name,short:short||name}).catch(function(){});
+  closeEditLabModal();
+  renderSuperLabs(document.getElementById('super-admin-content'));
+  initHome();renderLabList();
+  alert('✅ নাম আপডেট হয়েছে!');
+}
+function uploadSuperLabLogo(input, labId){
+  var file=input.files[0]; if(!file) return;
+  var reader=new FileReader();
+  reader.onload=function(e){
+    var lab=LABS.find(function(l){return l.id===labId;});
+    if(lab) lab.logo=e.target.result;
+    if(db) db.collection('config').doc('lab_logo_'+labId).set({logo:e.target.result}).catch(function(){});
+    renderSuperLabs(document.getElementById('super-admin-content'));
+    initHome(); renderLabList();
+    alert('✅ লোগো সেভ হয়েছে!');
+  };
+  reader.readAsDataURL(file);
+}
+function removeLabLogo(labId){
+  if(!confirm('লোগো মুছে দেবেন?')) return;
+  var lab=LABS.find(function(l){return l.id===labId;});
+  if(lab) lab.logo='';
+  if(db) db.collection('config').doc('lab_logo_'+labId).delete().catch(function(){});
+  renderSuperLabs(document.getElementById('super-admin-content'));
+  initHome(); renderLabList();
 }
 function renderSuperSerials(cont){
   var appts=getAppts().filter(function(a){return a.status!=='cancelled';});
@@ -1386,6 +1495,12 @@ function fbLoadAll(){
   db.collection('config').doc('app_settings').get().then(function(doc){
     if(doc.exists){APP_SETTINGS=Object.assign({},APP_SETTINGS,doc.data());localStorage.setItem('app_settings',JSON.stringify(APP_SETTINGS));var hn=document.getElementById('h-app-name');if(hn)hn.textContent='🏥 '+APP_SETTINGS.appName;var dl=document.getElementById('dev-credit-link');if(dl){dl.href=APP_SETTINGS.devLink;dl.textContent=APP_SETTINGS.devName;}}
   }).catch(function(){});
+  // Load lab names
+  LABS.forEach(function(lab){
+    db.collection('config').doc('lab_name_'+lab.id).get().then(function(doc){
+      if(doc.exists){if(doc.data().name)lab.name=doc.data().name;if(doc.data().short)lab.short=doc.data().short;}
+    }).catch(function(){});
+  });
   // Load lab logos
   LABS.forEach(function(lab){
     db.collection('config').doc('lab_logo_'+lab.id).get().then(function(doc){
